@@ -1,20 +1,19 @@
-import React, { useState } from "react";
 import { Tag } from "../ui/Tag";
 
-export const ActiveFilters = ({ filters }: { filters: string[] }) => {
-  const [activeFilters, setActiveFilters] = useState(filters);
+export const ActiveFilters = ({ filter }: { filter: string }) => {
+  if (!filter) {
+    return null;
+  }
+
   return (
     <div>
-      {activeFilters.map((filter) => (
         <Tag
-          key={filter}
           name={filter}
           showIcon
-          onClick={(removed: string) => {
-            setActiveFilters(activeFilters.filter((f) => f !== removed));
+          onClick={() => {
+            console.log("clicked tag")
           }}
         />
-      ))}
     </div>
   );
 };
