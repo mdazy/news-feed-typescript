@@ -1,9 +1,9 @@
-import { ActiveFilters } from "./ActiveFilters/ActiveFilters";
+import { ActiveFilter } from "./ActiveFilter/ActiveFilter";
 import { Search } from "./Search";
 
 export const Header = () => (
   <div className="Header" style={{ display: "flex", padding: "1em" }}>
-    <ActiveFilters filter="business" />
+    <ActiveFilter filter="business" />
     <Search />
   </div>
 );
